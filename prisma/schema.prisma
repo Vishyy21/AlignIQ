@@ -1,0 +1,154 @@
+datasource db {
+  provider = "postgresql"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id             String       @id @default(uuid())
+  email          String       @unique
+  name           String
+  role           Role         @default(EMPLOYEE)
+  departmentId   String?
+  department     Department?  @relation(fields: [departmentId], references: [id])
+  goals          Goal[]       @relation("GoalOwner")
+  approvals      Approval[]
+  auditLogs      AuditLog[]
+  notifications  Notification[]
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+}
+
+enum Role {
+  EMPLOYEE
+  MANAGER
+  DIRECTOR
+  VP
+  EXECUTIVE
+  ADMIN
+}
+
+model Department {
+  id             String       @id @default(uuid())
+  name           String       @unique
+  users          User[]
+  goals          Goal[]
+  healthScore    Float        @default(100.0)
+  strategicObjs  StrategicObjective[]
+}
+
+model StrategicObjective {
+  id             String       @id @default(uuid())
+  title          String
+  description    String?
+  departmentId   String?
+  department     Department?  @relation(fields: [departmentId], references: [id])
+  progress       Float        @default(0.0)
+  status         Status       @default(ON_TRACK)
+  goals          Goal[]
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+}
+
+model Goal {
+  id             String       @id @default(uuid())
+  title          String
+  description    String?
+  targetValue    Float
+  currentValue   Float        @default(0)
+  unit           String
+  status         Status       @default(ON_TRACK)
+  ownerId        String
+  owner          User         @relation("GoalOwner", fields: [ownerId], references: [id])
+  departmentId   String?
+  department     Department?  @relation(fields: [departmentId], references: [id])
+  objectiveId    String?
+  objective      StrategicObjective? @relation(fields: [objectiveId], references: [id])
+  checkIns       GoalCheckIn[]
+  approvals      Approval[]
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+}
+
+enum Status {
+  ON_TRACK
+  AT_RISK
+  BEHIND
+  COMPLETED
+  CANCELLED
+}
+
+model GoalCheckIn {
+  id             String       @id @default(uuid())
+  goalId         String
+  goal           Goal         @relation(fields: [goalId], references: [id])
+  value          Float
+  notes          String?
+  createdAt      DateTime     @default(now())
+}
+
+model Approval {
+  id             String       @id @default(uuid())
+  goalId         String
+  goal           Goal         @relation(fields: [goalId], references: [id])
+  approverId     String
+  approver       User         @relation(fields: [approverId], references: [id])
+  status         ApprovalStatus @default(PENDING)
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+}
+
+enum ApprovalStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  ESCALATED
+}
+
+model AuditLog {
+  id             String       @id @default(uuid())
+  action         String
+  entityType     String
+  entityId       String
+  userId         String?
+  user           User?        @relation(fields: [userId], references: [id])
+  metadata       Json?
+  createdAt      DateTime     @default(now())
+}
+
+model Notification {
+  id             String       @id @default(uuid())
+  userId         String
+  user           User         @relation(fields: [userId], references: [id])
+  title          String
+  message        String
+  read           Boolean      @default(false)
+  createdAt      DateTime     @default(now())
+}
+
+model AiInsight {
+  id             String       @id @default(uuid())
+  title          String
+  description    String
+  confidence     Float
+  impact         Float
+  type           InsightType
+  createdAt      DateTime     @default(now())
+}
+
+enum InsightType {
+  RISK
+  OPPORTUNITY
+  OPTIMIZATION
+}
+
+model EscalationEvent {
+  id             String       @id @default(uuid())
+  level          Int
+  reason         String
+  status         String       @default("OPEN")
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+}
