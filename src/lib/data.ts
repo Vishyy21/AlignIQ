@@ -17,6 +17,8 @@ export interface Goal {
   weight: number;
   due: string;
   description?: string;
+  locked?: boolean;   // BRD: goals lock after manager approval
+  shared?: boolean;   // BRD: shared goals assigned by manager/admin
 }
 
 export interface Approval {
