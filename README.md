@@ -1,36 +1,273 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ALIGNIQ — AI-Powered Enterprise Governance Operating System
 
-## Getting Started
+ALIGNIQ is a next-generation AI-powered Enterprise Governance OS designed to help organizations intelligently manage strategic alignment, KPI governance, operational visibility, executive oversight, and organizational performance through a unified operational command center.
 
-First, run the development server:
+Built for modern enterprises, ALIGNIQ combines governance intelligence, AI-assisted decision support, real-time analytics, and operational workflows into one immersive platform.
+
+---
+
+# 🚀 Problem Statement
+
+Large organizations struggle with:
+
+* Fragmented KPI tracking
+* Delayed governance reviews
+* Lack of strategic visibility
+* Operational misalignment across departments
+* Manual escalation handling
+* Disconnected reporting systems
+* Slow executive decision-making
+
+Traditional dashboards provide visibility — but not intelligence.
+
+ALIGNIQ solves this by introducing an AI-native governance operating system that transforms enterprise operations into a connected, intelligent, and proactive ecosystem.
+
+---
+
+# 💡 Solution
+
+ALIGNIQ provides:
+
+* AI Governance Copilot
+* KPI Intelligence System
+* Strategic Alignment Monitoring
+* Organizational Health Analytics
+* Escalation Prediction
+* Executive Governance Dashboards
+* Audit & Review Tracking
+* Real-Time Operational Visibility
+
+The platform enables enterprises to monitor governance health, predict operational risks, and align strategic objectives through intelligent AI-powered workflows.
+
+---
+
+# ✨ Key Features
+
+## 🧠 AI Governance Copilot
+
+An AI-powered enterprise assistant capable of:
+
+* Governance recommendations
+* KPI optimization
+* Executive summaries
+* Operational risk analysis
+* Strategic insights
+* Escalation simulation
+<img width="1905" height="968" alt="Screenshot 2026-05-19 041118" src="https://github.com/user-attachments/assets/1883d2aa-324a-46ca-9d6f-b8cdbf938211" />
+
+---
+
+## 📊 Executive Governance Dashboard
+
+Premium operational dashboard with:
+
+* Organizational health metrics
+* KPI velocity tracking
+* Governance compliance insights
+* Department analytics
+* Strategic alignment scoring
+* Real-time monitoring
+
+---
+
+## ⚠️ Escalation Intelligence
+
+Automatically detects:
+
+* Governance volatility
+* KPI failures
+* Strategic drift
+* Delayed approvals
+* Operational bottlenecks
+
+---
+
+## 📈 Advanced Analytics Center
+
+Interactive analytics system featuring:
+
+* Organizational trend analysis
+* Department performance comparison
+* Governance heatmaps
+* Operational forecasting
+* Executive reporting
+
+---
+
+## 🔍 Audit & Compliance Tracking
+
+Tracks:
+
+* Governance events
+* Executive approvals
+* KPI changes
+* Organizational reviews
+* Operational history
+
+---
+
+## 🌙 Premium Dark / Light Themes
+
+Cinematic enterprise UI featuring:
+
+* Ambient gradients
+* Glassmorphism
+* Motion interactions
+* Responsive design
+* Executive-level visual hierarchy
+
+---
+
+# 🏗️ Tech Stack
+
+## Frontend
+
+* Next.js 16
+* React 19
+* TypeScript
+* Tailwind CSS
+* Framer Motion
+
+## State Management
+
+* Zustand
+
+## Visualization
+
+* Recharts
+
+## Backend Simulation
+
+* Mock enterprise datasets
+* AI simulation engine
+* Governance workflow engine
+
+## Deployment
+
+* Vercel
+
+---
+
+# 🧠 AI Simulation
+
+One of ALIGNIQ’s core features is its Governance Simulation Engine.
+
+Example:
+
+### User Query
+
+> “What happens if Sales misses Q4 targets?”
+
+### ALIGNIQ Response
+
+* KPI metrics update dynamically
+* Organizational health recalculates
+* Governance risk increases
+* Escalation alerts trigger
+* AI generates cascading impact analysis
+* Executive recommendations are produced
+
+This creates a realistic enterprise governance simulation experience.
+
+---
+
+# 🎯 Hackathon Vision
+
+ALIGNIQ was built to demonstrate how AI can transform enterprise governance from a passive reporting system into an intelligent operational ecosystem.
+
+The project focuses on:
+
+* Enterprise-grade UX
+* AI-assisted governance
+* Strategic operational visibility
+* Real-time executive intelligence
+* Immersive product experience
+
+---
+
+# 📂 Project Structure
+
+```bash
+src/
+├── app/
+├── components/
+├── store/
+├── lib/
+├── styles/
+└── public/
+```
+
+---
+
+# ⚙️ Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/your-username/aligniq.git
+cd aligniq
+```
+
+---
+
+## Install Dependencies
+
+```bash
+npm install
+```
+
+---
+
+## Run Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Open in Browser
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+http://localhost:3000
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+# 🌐 Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+ALIGNIQ is optimized for deployment on:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* Vercel
+* Netlify
+* Railway
 
-## Deploy on Vercel
+Recommended:
+Vercel Deployment Platform.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# 👨‍💻 Team
+
+Built with passion for hackathons, AI systems, enterprise UX, and intelligent operational design.
+
+---
+
+# 📌 Future Scope
+
+* Real enterprise integrations
+* Multi-tenant architecture
+* RBAC authentication
+* Real-time governance engine
+* AI-powered forecasting
+* Workflow automation
+* Enterprise reporting exports
+* Slack / Teams integrations
+
+---
+
+# 🏁 Final Note
+
+ALIGNIQ is more than a dashboard.
+
+It is an AI-native Enterprise Governance Operating System designed to help organizations align strategy, governance, performance, and operational intelligence through immersive AI-powered workflows.
